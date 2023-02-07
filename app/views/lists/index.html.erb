@@ -1,0 +1,9 @@
+<div class="container mt-3">
+  <h1>List list</h1>
+  <ul class="list-inline">
+    <% @lists.each do |list| %>
+      <li><%= link_to list.name, list_path(list)%></li>
+    <% end %>
+  </ul>
+  <p class="btn btn-light"><%= link_to "Create a new List", new_list_path %></p>
+</div>

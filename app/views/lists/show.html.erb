@@ -1,0 +1,22 @@
+<div class="container mt-3">
+  <h1><%= @list.name %></h1>
+  <div class="container">
+    <% @list.bookmarks.each do |bookmark| %>
+      <div class="border-bottom pb-2">
+        <ul class="list-inline">
+          <li><strong><%= bookmark.movie.title %></strong></li>
+          <li><%= bookmark.movie.overview %></li>
+          <li>Rating: <%= bookmark.movie.rating %></li>
+          <li>User comment: <%= bookmark.comment %></li>
+        </ul>
+        <%= link_to "Delete this bookmarked movie",
+          bookmark_path(bookmark),
+          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+        %>
+      </div>
+    <% end %>
+  </div>
+<%# need to input the mmovies of the list, probably in cards %>
+  <p class="btn btn-light"><%= link_to "Add a bookmarked movie", new_bookmark_path(@list) %></p>
+  <p class="btn btn-light"><%= link_to "Back to List list", lists_path %></p>
+</div>
