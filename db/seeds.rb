@@ -18,6 +18,7 @@ Movie.create(title: "Ocean's Eight", overview: "Debbie Ocean, a criminal masterm
   Movie.create(
     title: Faker::Movie.title,
     overview: Faker::Movie.quote,
+    poster_url: "https://source.unsplash.com/random",
     rating: rand(5.0..9.9).floor(1)
   )
 end
