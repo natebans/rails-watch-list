@@ -1,0 +1,6 @@
+  <%= simple_form_for (list) do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <%= f.submit "Create List", class: "btn btn-primary" %>
+  <% end %>
