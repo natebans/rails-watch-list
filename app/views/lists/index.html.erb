@@ -1,7 +1,6 @@
 <div class="container mt-3">
   <h1>List list</h1>
   <ul class="list-inline">
-    <%= cl_image_tag @list.photo.key, height: 200, width: 300, crop: :fill
     <% @lists.each do |list| %>
       <li><%= link_to list.name, list_path(list)%></li>
     <% end %>
